@@ -4,119 +4,266 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currículo - João Poli</title>
-    <link rel="stylesheet" href="css/arquivo.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .nav-link:hover {
+            border-bottom: 2px solid #38bdf8;
+        }
+        .section-divider {
+            border-bottom: 1px solid #e5e7eb;
+        }
+        #vanta-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.2;
+        }
+    </style>
 </head>
-<body>
-    <div class="container">
-        <nav>
-            <h2>Sumário</h2>
-            <ul class="navegacao">
-                <li><a href="http://www.puc-rio.br">PUC-Rio</a></li>
-                <li><a href="#resumo">Resumo</a></li>
-                <li><a href="#habilidades">Habilidades</a></li>
-                <li><a href="#educacao">Educação</a></li>
-                <li><a href="#idiomas">Idiomas</a></li>
-                <li><a href="spiff.html">spiff</a></li>
+<body class="bg-gray-50 text-gray-800">
+    <div id="vanta-bg"></div>
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <div class="flex flex-col md:flex-row gap-8">
+            <!-- Navigation -->
+            <nav class="w-full md:w-1/4 bg-white p-6 rounded-lg shadow-sm">
+                <div class="sticky top-8">
+                    <div class="flex flex-col items-center mb-8">
+                        <img src="http://static.photos/blue/320x240/42" alt="Profile" class="w-32 h-32 rounded-full object-cover border-4 border-primary-200">
+                        <h1 class="text-xl font-bold mt-4 text-primary-700">João Poli</h1>
+                        <p class="text-sm text-gray-500">Engenharia de Produção</p>
+                    </div>
+                    
+                    <h2 class="text-lg font-semibold mb-4 text-primary-600 flex items-center">
+                        <i data-feather="menu" class="mr-2"></i> Menu
+                    </h2>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="nav-link flex items-center py-2 text-gray-600 hover:text-primary-600 transition">
+                            <i data-feather="user" class="mr-2 w-4 h-4"></i> Sobre mim
+                        </a></li>
+                        <li><a href="#experience" class="nav-link flex items-center py-2 text-gray-600 hover:text-primary-600 transition">
+                            <i data-feather="briefcase" class="mr-2 w-4 h-4"></i> Experiência
+                        </a></li>
+                        <li><a href="#skills" class="nav-link flex items-center py-2 text-gray-600 hover:text-primary-600 transition">
+                            <i data-feather="award" class="mr-2 w-4 h-4"></i> Habilidades
+                        </a></li>
+                        <li><a href="#education" class="nav-link flex items-center py-2 text-gray-600 hover:text-primary-600 transition">
+                            <i data-feather="book" class="mr-2 w-4 h-4"></i> Educação
+                        </a></li>
+                        <li><a href="#languages" class="nav-link flex items-center py-2 text-gray-600 hover:text-primary-600 transition">
+                            <i data-feather="globe" class="mr-2 w-4 h-4"></i> Idiomas
+                        </a></li>
+                        <li><a href="http://www.puc-rio.br" target="_blank" class="nav-link flex items-center py-2 text-gray-600 hover:text-primary-600 transition">
+                            <i data-feather="external-link" class="mr-2 w-4 h-4"></i> PUC-Rio
+                        </a></li>
+                    </ul>
 
-            </ul>
-        </nav>
+                    <div class="mt-8 pt-4 border-t border-gray-100">
+                        <h3 class="text-sm font-semibold text-gray-500 mb-2">CONTATO</h3>
+                        <ul class="space-y-1 text-sm">
+                            <li class="flex items-center text-gray-600">
+                                <i data-feather="mail" class="mr-2 w-4 h-4"></i> joaopolisilva@gmail.com
+                            </li>
+                            <li class="flex items-center text-gray-600">
+                                <i data-feather="phone" class="mr-2 w-4 h-4"></i> (21) 99607-9048
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
 
-        <main>
-            <img src="imagem/goat.jpg" id="Poatan" alt="Foto - Alex Poatan">
+            <!-- Main Content -->
+            <main class="w-full md:w-3/4 bg-white p-8 rounded-lg shadow-sm">
+                <!-- About Section -->
+                <section id="about" class="mb-10 section-divider pb-8">
+                    <h2 class="text-2xl font-bold mb-4 text-primary-700 flex items-center">
+                        <i data-feather="user" class="mr-2"></i> Sobre mim
+                    </h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        Estudante de engenharia de produção da PUC-Rio, focado na geração e produção de novas ideias.
+                        Sempre trabalhando, sempre evoluindo.
+                    </p>
+                    
+                    <div class="mt-6 bg-primary-50 p-4 rounded-lg">
+                        <h3 class="font-medium text-primary-700 mb-2">Detalhes Pessoais</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                            <div class="flex items-center">
+                                <i data-feather="star" class="mr-2 w-4 h-4 text-primary-500"></i>
+                                <span>Lutador amador de MMA</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i data-feather="activity" class="mr-2 w-4 h-4 text-primary-500"></i>
+                                <span>Prajied azul clara (Muay Thai)</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i data-feather="award" class="mr-2 w-4 h-4 text-primary-500"></i>
+                                <span>Fã do Poatan</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-            <h1>João Poli</h1>
+                <!-- Experience Section -->
+                <section id="experience" class="mb-10 section-divider pb-8">
+                    <h2 class="text-2xl font-bold mb-4 text-primary-700 flex items-center">
+                        <i data-feather="briefcase" class="mr-2"></i> Experiência Profissional
+                    </h2>
+                    <div class="space-y-6">
+                        <div class="pl-4 border-l-4 border-primary-300">
+                            <h3 class="text-lg font-semibold text-gray-700">Designer gráfico, editor de vídeo e diretor criativo</h3>
+                            <p class="text-sm text-gray-500 mb-2">Microempreendedores autônomos</p>
+                            <p class="text-gray-600">Desenvolvimento de identidade visual, criação de conteúdo e estratégias para redes sociais.</p>
+                        </div>
+                    </div>
+                </section>
 
-            <div id="sumario">
-                Profissão: Estudante<br>
-                Instituição: PUC-Rio<br>
-                Celular: +55 (21)99607-9048<br>
-                Email: joaopolisilva@gmail.com<br>
-            </div>
+                <!-- Skills Section -->
+                <section id="skills" class="mb-10 section-divider pb-8">
+                    <h2 class="text-2xl font-bold mb-4 text-primary-700 flex items-center">
+                        <i data-feather="award" class="mr-2"></i> Habilidades
+                    </h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="text-lg font-semibold mb-3 text-gray-700">Profissionais</h3>
+                            <ul class="space-y-2">
+                                <li class="flex items-start">
+                                    <i data-feather="check-circle" class="mr-2 mt-1 text-primary-500 w-4 h-4"></i>
+                                    <span>Experiência em Design Gráfico</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-feather="check-circle" class="mr-2 mt-1 text-primary-500 w-4 h-4"></i>
+                                    <span>Editor de vídeo</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-feather="check-circle" class="mr-2 mt-1 text-primary-500 w-4 h-4"></i>
+                                    <span>Algoritmos de redes sociais</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-feather="check-circle" class="mr-2 mt-1 text-primary-500 w-4 h-4"></i>
+                                    <span>Geração de prompts para IAs</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-lg font-semibold mb-3 text-gray-700">Pessoais</h3>
+                            <ul class="space-y-2">
+                                <li class="flex items-start">
+                                    <i data-feather="zap" class="mr-2 mt-1 text-primary-500 w-4 h-4"></i>
+                                    <span>Hiperfoco</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-feather="cpu" class="mr-2 mt-1 text-primary-500 w-4 h-4"></i>
+                                    <span>Pensamento fora da caixa</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-feather="target" class="mr-2 mt-1 text-primary-500 w-4 h-4"></i>
+                                    <span>Resolução de problemas</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-feather="refresh-cw" class="mr-2 mt-1 text-primary-500 w-4 h-4"></i>
+                                    <span>Adaptabilidade</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
 
-            <section id="resumo">
-                <h2>Sobre mim</h2>
-                <p>
-                    Estudante de engenharia de produção da PUC-Rio, focado na geração e produção de novas ideias.
-                    Sempre trabalhando, sempre evoluindo.
-                </p>
-            </section>
-<table>
-    <thead>
-        <tr>
-            <th>João</th>
-            <th>Poli</th>
-            <th>Silva</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>prajied azul clara (muay thai)</td>
-            <td>lutador amador de MMA</td>
-            <td>fã do Poatan</td>
-        </tr>
-        <tr>
-            <td>8</td>
-            <td>7</td>
-            <td>5</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <td>CH</td>
-            <td>A</td>
-            <td>MA</td>
-        </tr>
-    </tfoot>
-</table>
-            <section id="habilidades">
-                <h2>Experiência Profissional</h2>
+                <!-- Education Section -->
+                <section id="education" class="mb-10 section-divider pb-8">
+                    <h2 class="text-2xl font-bold mb-4 text-primary-700 flex items-center">
+                        <i data-feather="book" class="mr-2"></i> Educação
+                    </h2>
+                    <div class="space-y-4">
+                        <div class="pl-4 border-l-4 border-primary-300">
+                            <h3 class="text-lg font-semibold text-gray-700">Bacharelado em Engenharia de Produção</h3>
+                            <p class="text-sm text-gray-500">PUC-Rio</p>
+                            <p class="text-gray-600">Cursando</p>
+                        </div>
+                        <div class="pl-4 border-l-4 border-primary-300">
+                            <h3 class="text-lg font-semibold text-gray-700">Ensino Médio Completo</h3>
+                        </div>
+                        <div class="pl-4 border-l-4 border-primary-300">
+                            <h3 class="text-lg font-semibold text-gray-700">Curso de Iluminação</h3>
+                            <p class="text-sm text-gray-500">Universo Magnético</p>
+                        </div>
+                    </div>
+                </section>
 
-                <h3>Designer gráfico, editor de vídeo e diretor criativo de microempreendedores autônomos
-                </h3>
+                <!-- Languages Section -->
+                <section id="languages" class="mb-6">
+                    <h2 class="text-2xl font-bold mb-4 text-primary-700 flex items-center">
+                        <i data-feather="globe" class="mr-2"></i> Idiomas
+                    </h2>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="bg-primary-50 px-4 py-2 rounded-full">
+                            <span class="text-primary-700">Português</span>
+                        </div>
+                        <div class="bg-primary-50 px-4 py-2 rounded-full">
+                            <span class="text-primary-700">English</span>
+                        </div>
+                        <div class="bg-primary-50 px-4 py-2 rounded-full">
+                            <span class="text-primary-700">Deutsch</span>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
 
-                <h2>Habilidades e Competências</h2>
-
-                <ul>
-                    <li>Experiência em Design Gráfico</li>
-                    <li>Editor de vídeo</li>
-                    <li>Experiente com algoritmos de redes sociais</li>
-                    <li>Geração de prompts para IAs analíticas/generativas</li>
-
-                </ul>
-
-                <h2>Habilidades Pessoais</h2>
-
-                <ul>
-                    <li>Hiperfoco</li>
-                    <li>Pensamento fora da caixa</li>
-                    <li>Resolução de problemas não convencionais</li>
-                    <li>Adaptabilidade</li>
-                </ul>
-            </section>
-
-            <section id="educacao">
-                <h2>Educação</h2>
-                <ul>
-                    <li>Ensino Médio Completo</li>
-                    <li>Cursando Bacharelado em Engenharia de Produção PUC-Rio</li>
-                    <li>Curso de Iluminação - Universo Magnético</li>
-            </section>
-
-            <section id="idiomas">
-                <h2>Idiomas</h2>
-                <ul>
-                    <li>Português</li>
-                    <li>English</li>
-                    <li>Deutsch</li>
-                </ul>
-            </section>
-        </main>
-        <footer>
-            <div>
-                O céu não é o limite.
-            </div>
+        <footer class="mt-8 text-center text-sm text-gray-500">
+            <p>O céu não é o limite. © 2023 João Poli</p>
         </footer>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+    <script>
+        VANTA.NET({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x7dd3fc,
+            backgroundColor: 0xf8fafc,
+            points: 10.00,
+            maxDistance: 22.00,
+            spacing: 18.00
+        })
+        feather.replace();
+    </script>
 </body>
 </html>
